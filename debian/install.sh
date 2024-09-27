@@ -58,7 +58,7 @@ resources/applications.sh
 resources/switch.sh
 
 #Fail2ban
-resources/fail2ban.sh
+#resources/fail2ban.sh
 
 #Postgres
 resources/postgresql.sh
