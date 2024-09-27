@@ -1,8 +1,8 @@
 
 # FusionPBX Settings
-domain_name=ip_address                      # hostname, ip_address or a custom value
+domain_name=212.90.120.156                  # hostname, ip_address or a custom value
 system_username=admin                       # default username admin
-system_password=random                      # random or a custom value
+system_password=B@nzai1970123                      # random or a custom value
 system_branch=5.3                           # master, 5.3
 
 # FreeSWITCH Settings
