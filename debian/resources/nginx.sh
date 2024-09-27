@@ -82,4 +82,5 @@ fi
 
 #restart nginx
 #service nginx restart
+nginx
 /etc/init.d/nginx restart
