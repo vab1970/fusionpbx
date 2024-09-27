@@ -78,7 +78,8 @@ if [ .$letsencrypt_folder = .true ]; then
 fi
 
 #flush systemd cache
-systemctl daemon-reload
+#systemctl daemon-reload
 
 #restart nginx
-service nginx restart
+#service nginx restart
+/etc/init.d/nginx restart
