@@ -159,7 +159,7 @@ if [ .$cpu_architecture = .'x86' ]; then
 fi
 
 #restart php-fpm
-systemctl daemon-reload
+#systemctl daemon-reload
 if [ ."$php_version" = ."5.6" ]; then
         systemctl restart php5-fpm
 fi
@@ -179,8 +179,10 @@ if [ ."$php_version" = ."7.4" ]; then
         systemctl restart php7.4-fpm
 fi
 if [ ."$php_version" = ."8.1" ]; then
-        systemctl restart php8.1-fpm
+       # systemctl restart php8.1-fpm
+	/etc/init.d# /etc/init.d/php8.1-fpm restart
 fi
+
 
 #init.d
 #/usr/sbin/service php5-fpm restart
