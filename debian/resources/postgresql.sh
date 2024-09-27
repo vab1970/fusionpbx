@@ -78,8 +78,10 @@ sed -i /etc/postgresql/$database_version/main/pg_hba.conf -e '/^#/!s/scram-sha-2
 
 #systemd
 if [ ."$database_host" = ."127.0.0.1" ] || [ ."$database_host" = ."::1" ] ; then
-	systemctl daemon-reload
-	systemctl restart postgresql
+	#systemctl daemon-reload
+	#systemctl restart postgresql
+         /etc/init.d/postgresql restart
+ 
 fi
 
 #init.d
