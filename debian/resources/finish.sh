@@ -95,23 +95,25 @@ sed -i /etc/freeswitch/autoload_configs/xml_cdr.conf.xml -e s:"{v_pass}:$xml_cdr
 cd /var/www/fusionpbx && /usr/bin/php /var/www/fusionpbx/core/upgrade/upgrade.php
 
 #restart freeswitch
-/bin/systemctl daemon-reload
-/bin/systemctl restart freeswitch
+#/bin/systemctl daemon-reload
+#/bin/systemctl restart freeswitch
+/usr/bin/freeswitch -stop
+/usr/bin/freeswitch -u www-data -g www-data -ncwait -nonat
 
 #install the email_queue service
 cp /var/www/fusionpbx/app/email_queue/resources/service/debian.service /etc/systemd/system/email_queue.service
-systemctl enable email_queue
-systemctl start email_queue
-systemctl daemon-reload
+#systemctl enable email_queue
+#systemctl start email_queue
+#systemctl daemon-reload
 
 #install the event_guard service
 cp /var/www/fusionpbx/app/event_guard/resources/service/debian.service /etc/systemd/system/event_guard.service
-/bin/systemctl enable event_guard
-/bin/systemctl start event_guard
-/bin/systemctl daemon-reload
+#/bin/systemctl enable event_guard
+#/bin/systemctl start event_guard
+#/bin/systemctl daemon-reload
 
 #add xml cdr import to crontab
-apt install cron
+apt -y install cron
 (crontab -l; echo "* * * * * $(which php) /var/www/fusionpbx/app/xml_cdr/xml_cdr_import.php 300") | crontab
 
 #welcome message
