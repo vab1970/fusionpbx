@@ -29,7 +29,9 @@ apt-get install -y gpg
 #SNMP
 apt-get install -y snmpd
 echo "rocommunity public" > /etc/snmp/snmpd.conf
-service snmpd restart
+#service snmpd restart
+/etc/init.d/snmpd restart
+
 
 #disable vi visual mode
 echo "set mouse-=a" >> ~/.vimrc
