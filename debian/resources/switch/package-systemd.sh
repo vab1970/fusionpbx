@@ -7,7 +7,9 @@ then
     #Disable CPU Scheduler for OpenVZ, not supported on OpenVZ."
     sed -i -e "s/CPUSchedulingPolicy=rr/;CPUSchedulingPolicy=rr/g" /lib/systemd/system/freeswitch.service
 fi
-systemctl enable freeswitch
-systemctl unmask freeswitch.service
-systemctl daemon-reload
-systemctl start freeswitch
+#systemctl enable freeswitch
+#ystemctl unmask freeswitch.service
+#systemctl daemon-reload
+#systemctl start freeswitch
+
+/usr/bin/freeswitch -u www-data -g www-data -ncwait -nonat
