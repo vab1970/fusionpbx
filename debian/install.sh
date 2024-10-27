@@ -49,7 +49,7 @@ resources/php.sh
 resources/nginx.sh
 
 #FusionPBX
-resources/fusionpbx.sh
+#resources/fusionpbx.sh
 
 #Optional Applications
 resources/applications.sh
