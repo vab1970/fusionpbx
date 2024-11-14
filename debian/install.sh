@@ -37,7 +37,7 @@ echo "rocommunity public" > /etc/snmp/snmpd.conf
 echo "set mouse-=a" >> ~/.vimrc
 
 #IPTables
-resources/iptables.sh
+#resources/iptables.sh
 
 #sngrep
 resources/sngrep.sh
@@ -61,7 +61,7 @@ resources/switch.sh
 #resources/fail2ban.sh
 
 #Postgres
-resources/postgresql.sh
+#resources/postgresql.sh
 
 #set the ip address
 server_address=$(hostname -I)
